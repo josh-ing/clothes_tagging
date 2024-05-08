@@ -1,7 +1,7 @@
 import cv2
 import tensorflow as tf
 from tensorflow import keras
-from tensorflow.python.keras import models, layers
+from keras import models, layers
 import numpy as np
 
 def create_cnn_model(input_shape, num_classes):
@@ -12,7 +12,7 @@ def create_cnn_model(input_shape, num_classes):
     model.add(layers.MaxPooling2D((2, 2)))
     model.add(layers.Conv2D(128, (3, 3), activation='relu'))
     model.add(layers.MaxPooling2D((2, 2)))
-    model.add(layers.Conv2D(128, (3, 3), activation='relu'))
+    model.add(layers.Conv2D(128, (1, 1), activation='relu'))
     model.add(layers.MaxPooling2D((2, 2)))
     model.add(layers.Flatten())
     model.add(layers.Dropout(0.5)) # Adding dropout for regularization
@@ -33,6 +33,7 @@ def classify_clothing(image_path):
     # Load Fashion MNIST dataset
     (_, _), (x_test, _) = tf.keras.datasets.fashion_mnist.load_data()
     x_test = np.expand_dims(x_test, axis=-1)
+    x_test = x_test.astype('float32') / 255.0
 
     input_shape = x_test.shape[1:]
     num_classes = 10  # Number of classes in Fashion MNIST dataset
