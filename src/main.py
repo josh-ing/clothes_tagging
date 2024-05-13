@@ -1,20 +1,15 @@
-import cv2
 import tensorflow as tf
 import numpy as np
-import train_model
+import classify
 
 def main():
-    # Path to the image
-    image_path = 'resources\IMG_0416.JPEG'
-    # cnn = train_model()
+    print("Entry point")
+    image_path = r"src\resources\IMG_0736.JPEG"
+    model_path = r"model\fashion_mnist_cnn_model.h5"
+    trained_model = tf.keras.models.load_model(model_path)
+    print("Loaded model")
+    print(str(classify.classify_clothing(trained_model, image_path)))
 
-    # Classify clothing type
-    clothing_type = train_model.classify_clothing(image_path)
-    print("Clothing Type:", clothing_type)
-
-    # Recognize color
-    color = train_model.recognize_color(image_path)
-    print("Dominant Color (RGB):", color)
 
 if __name__ == "__main__":
     main()
