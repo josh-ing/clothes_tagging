@@ -4,7 +4,7 @@ import classify
 
 def main():
     print("Entry point")
-    image_path = r"src\resources\IMG_0736.JPEG"
+    image_path = r"src\resources\511AN5bcB4L.jpeg"
     model_path = r"model\fashion_mnist_cnn_model.h5"
     trained_model = tf.keras.models.load_model(model_path)
     print("Loaded model")
