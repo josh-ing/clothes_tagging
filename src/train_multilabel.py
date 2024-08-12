@@ -1,6 +1,19 @@
 import torch.optim as optim
 import torch
 import torch.nn as nn
+from torchvision import models
+
+num_labels = len(mlb.classes_)
+
+
+model = models.resnet50(pretrained=True)
+model.fc = nn.Sequential(
+    nn.Linear(model.fc.in_features, 512),
+    nn.ReLU(),
+    nn.Dropout(0.5),
+    nn.Linear(512, num_labels),  # num_labels is the number of possible labels
+    nn.Sigmoid()  # Use sigmoid for multilabel classification
+)
 
 criterion = nn.BCELoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
