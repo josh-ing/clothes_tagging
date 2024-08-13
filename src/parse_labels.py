@@ -17,6 +17,7 @@ class parse_labels:
         with open(self.category_file) as f:
             categories = json.load(f)
 
+        print(categories)
         self.category_map = {cat['id']: cat['name'] for cat in categories}
         self.images = [item['image_path'] for item in data]
         self.labels = [[self.category_map[label_id] for label_id in item['label']] for item in data]
