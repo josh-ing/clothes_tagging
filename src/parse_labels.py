@@ -1,5 +1,6 @@
 import json
 from sklearn.preprocessing import MultiLabelBinarizer
+from sklearn.preprocessing import LabelEncoder
 
 class parse_labels:
     def __init__(self, fashion_file, category_file):
@@ -17,15 +18,24 @@ class parse_labels:
         with open(self.category_file) as f:
             categories = json.load(f)
 
-        print(categories)
-        self.category_map = {cat['id']: cat['name'] for cat in categories}
-        self.images = [item['image_path'] for item in data]
-        self.labels = [[self.category_map[label_id] for label_id in item['label']] for item in data]
+        self.category_map = categories
+        # self.images = [item['image_path'] for item in data]
+        for item in data:
+            product_id = item['product']
+            scene_id = item['scene']
+            bbox = item['bbox']
+
+            category = self.category_map.get(product_id)
+
+            if category:
+                self.images.append(scene_id)
+                self.labels.append(category)
+        # self.labels = [[self.category_map[label_id] for label_id in item['label']] for item in data]
 
     def encode_labels(self):
-        mlb = MultiLabelBinarizer()
-        self.encoded_labels = mlb.fit_transform(self.labels)
-        return mlb.classes_
+        encoder = LabelEncoder()
+        self.encoded_labels = encoder.fit_transform(self.labels)
+        return encoder.classes_
 
     def get_data(self):
         return self.images, self.encoded_labels
