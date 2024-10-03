@@ -28,6 +28,7 @@ def classify_clothing(model, image_path):
 
     class_labels = ['T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat',
                     'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot']
+    
 
     return class_labels[predicted_class]
 
