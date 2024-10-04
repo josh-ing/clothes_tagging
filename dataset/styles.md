@@ -12,7 +12,7 @@ long sleeve, polos, button up, t-shirts, knitwear, sweatshirts, sleeveless, jers
 casual, denim, shorts, sweatpants, skirts
 
 #### Outerwear:
-bomers, denim, heavy, leather, light, parka, raincoat, vest, down
+bombers, denim, coat, leather, light, parka, raincoat, vest, down, cardigan
 
 #### Footwear:
 boots, derby, loafer, hi-top, low-top, sandals, slides, heels, flats, clog
@@ -27,7 +27,7 @@ Bags, belt, glasses, scarf, hats, jewelry, watches, sunglasses
 Black, blue, brown, burgundy, gray, green, navy, orange, pink, purple, red, tan, white, yellow
 
 ## styleType:
-Avant-garde, gorp-core, Y2K, minimalist, formal, streetwear, workwear, punk, goth, light academia, dark academia, business casual, basics, casual, vintage, athleisure, preppy, cultural,
+Avant-garde, gorp-core, Y2K, minimalist, formal, streetwear, workwear, punk, goth, light academia, dark academia, business casual, basics, casual, vintage, athleisure, preppy, cultural, bohemian, techwear, cottagecore, military, eclectic, western, harajuku
 
 
 ## Stores:
