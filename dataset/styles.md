@@ -31,4 +31,4 @@ Avant-garde, gorp-core, Y2K, minimalist, formal, streetwear, workwear, punk, got
 
 
 ## Stores:
-Ross, marshalls, H & M, Zara, rue21, urban outfitters, hot topic, tjmaxx, uniqlo, banana republic, holister, gap, old navy, burlington
+marshalls, H & M, Zara, hot topic, tjmaxx, uniqlo, banana republic, holister, gap, old navy
